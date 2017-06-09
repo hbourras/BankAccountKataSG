@@ -1,7 +1,6 @@
 package com.hbourras.kata.bankaccount.dao;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,16 +8,13 @@ import java.util.Map;
 import org.springframework.stereotype.Component;
 
 import com.hbourras.kata.bankaccount.bean.AccountBean;
-import com.hbourras.kata.bankaccount.bean.OperationBean;
 import com.hbourras.kata.bankaccount.enumerator.CurrencyEnum;
-import com.hbourras.kata.bankaccount.enumerator.OperationEnum;
 
 @Component
 public class AccountDaoMock {
 	private static Map<String,AccountBean> accounts = new HashMap<String,AccountBean>();
 	static {
-		accounts.put("00001", new AccountBean("00001","Hamid BOURRAS",new Double(120.35),CurrencyEnum.EUR));
-		accounts.get("00001").getOperations().add(new OperationBean(Calendar.getInstance().getTime(),new Double(120.35),OperationEnum.DEPOSIT));
+		accounts.put("00001", new AccountBean("00001","Hamid BOURRAS",new Double(100),CurrencyEnum.EUR));
 	}
 	
 	public List<AccountBean> findAll() {
